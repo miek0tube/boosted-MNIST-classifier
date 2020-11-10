@@ -10,7 +10,7 @@ random.seed(MAGIC)
 
 from tqdm import tqdm
 from matplotlib import pyplot as plt
-from keras.models import Sequential
+from keras.models import Sequential, load_model
 from keras.layers import Dense, Dropout, Activation, Flatten  
 from keras.layers import Convolution2D, MaxPooling2D 
 from keras.utils import np_utils
@@ -32,7 +32,7 @@ X_test /= 255
 Y_train = np_utils.to_categorical(y_train, 10) 
 Y_test = np_utils.to_categorical(y_test, 10)
 
-model = tf.keras.models.load_model("./mnist.h5")
+model = load_model("./mnist.h5")
 
 SCORE_THRESHOLD = 0.5
 
